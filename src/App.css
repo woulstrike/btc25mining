@@ -1,6 +1,7 @@
 .background {
-    background-image: url('https://99px.ru/sstorage/86/2015/12/image_862112150836582927154.gif');
+    background-image: url('../public/stars.svg');
     background-size: cover;
     background-position: center;
-    height: 1920px; 
+    height: 500px; 
+    width: 500px;
   }
