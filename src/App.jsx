@@ -1,4 +1,4 @@
-import 'App.css'
+import './App.css'
 import { HeaderButtons } from "./components/header/jsx/headersBtn"
 // const tg = window.Telegram.WebApp
 
@@ -6,7 +6,7 @@ import { HeaderButtons } from "./components/header/jsx/headersBtn"
 export default function App() {
   return (
     <>
-      <div className="div-header">
+      <div className="background">
         <HeaderButtons />
       </div>
       
