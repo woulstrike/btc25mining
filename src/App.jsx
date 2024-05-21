@@ -1,12 +1,13 @@
-
-const tg = window.Telegram.WebApp
+import { HeaderButtons } from "./components/header/headerSection.jsx"
+// const tg = window.Telegram.WebApp
 
 
 export default function App() {
   return (
     <>
-      {tg}
-
+      <div>
+        <HeaderButtons />
+      </div>
       
     </>
   )
