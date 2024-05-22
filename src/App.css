@@ -2,15 +2,14 @@ body {
   margin: 0;
   padding: 0;
   background-image: url('../public/stars.gif');
-  max-width: 1920px;
-  max-height: 1080px;
   background-position: center top;
+  max-width: 1920;
   height: 100px; 
   overflow: hidden; 
 }
 
 
 .btc-img{
-  height: 500px;
-  margin-left: 500px;
+  height: 400px;
+  margin-left: 700px;
 }
