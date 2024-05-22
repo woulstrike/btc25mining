@@ -4,8 +4,8 @@ body {
   background-image: url('../public/stars.gif');
   max-width: 400px;
   background-position: center top;
-  height: 2796px;
-  width: 1290; 
+  max-height: 2796px;
+  max-width: 1290; 
   overflow: hidden; 
 }
 
