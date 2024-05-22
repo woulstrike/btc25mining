@@ -1,11 +1,12 @@
 @font-face {
     font-family: 'ST-SimpleSquare';
-    src: url('vite-project/src/components/assets/fonts/ST-SimpleSquare.ttf') format('truetype');
+    src: url('../assets/fonts/ST-SimpleSquare_1.woff') format('truetype'),
+        url('../assets/fonts/ST-SimpleSquare.woff');
     font-display: swap;
 }
 @font-face {
     font-family: 'Jaro';
-    src: url('vite-project/src/components/assets/fonts/Jaro.ttf') format('truetype');
+    src: url('../assets/fonts/Jaro.woff') format('truetype');
     font-display: swap;
 }
 
