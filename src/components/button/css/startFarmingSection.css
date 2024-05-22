@@ -5,7 +5,7 @@
     transform: translateX(-50%);
     width: 90%;
     max-width: 400px;
-    padding: 0 10px;
+    padding: 0 10px 0 100px;
 }
 
 .centered-button {
@@ -44,7 +44,7 @@
 .counter-display {
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
 }
