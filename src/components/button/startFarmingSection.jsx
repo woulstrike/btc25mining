@@ -46,7 +46,7 @@ export function StartFarmingSection() {
           <img src={coinImg} alt="Icon" className="icon" />
           <span className="icon-text">BTC25</span>
         </div>
-        <span className="counter" style={{ color: isCounting ? 'white' : 'white', fontSize: '40px', paddingBottom: '44px', paddingLeft: '60px'}}>
+        <span className="counter" style={{ color: isCounting ? 'white' : 'white', fontSize: '40px', paddingBottom: '40px', paddingLeft: '63px'}}>
           {counter.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: true })}
         </span>
       </div>
