@@ -1,11 +1,11 @@
 .container {
     position: fixed;
-    bottom: 120px;
+    bottom: 110px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     max-width: 400px;
-    padding: 0 10px 0 100px;
+    padding: 0 10px 0 80px;
 }
 
 .centered-button {
@@ -13,14 +13,15 @@
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 8px 0;
+    padding: 9px 0 ;
     font-size: 18px;
-    width: 80%;
+    width: 90%;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(245, 243, 243, 0.1);
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-align: center;
+
 }
 
 
