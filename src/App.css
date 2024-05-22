@@ -2,9 +2,10 @@ body {
   margin: 0;
   padding: 0;
   background-image: url('../public/stars.gif');
-
+  max-width: 400px;
   background-position: center top;
-  height: 100px; 
+  height: 2796px;
+  width: 1290; 
   overflow: hidden; 
 }
 
