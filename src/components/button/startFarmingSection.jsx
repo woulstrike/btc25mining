@@ -51,7 +51,7 @@ export function StartFarmingSection() {
       <div className="counter-display">
         <div className="icon-container">
           <img src={coinImg} alt="Icon" className="icon" />
-          <span className="icon-text">BTC25</span>
+          <span className="icon-text">@BTC25</span>
         </div>
         <span className="counter">
           {formatCounter(counter)}
