@@ -7,3 +7,9 @@ body {
   height: 100px; 
   overflow: hidden; 
 }
+
+
+.btc-img{
+  height: 500px;
+  margin-left: 560px;
+}

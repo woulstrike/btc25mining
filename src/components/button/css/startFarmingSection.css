@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'ST-SimpleSquare';
-    src: url('../assets/fonts/ST-SimpleSquare_1.woff') format('truetype'),
-        url('../assets/fonts/ST-SimpleSquare.woff');
+    src: url('../assets/fonts/ST-SimpleSquare_1.woff') format('woff'),
+        url('../assets/fonts/ST-SimpleSquare.woff') format('woff');
     font-display: swap;
 }
 @font-face {
     font-family: 'Jaro';
-    src: url('../assets/fonts/Jaro.woff') format('truetype');
+    src: url('../assets/fonts/Jaro.woff') format('woff');
     font-display: swap;
 }
 
