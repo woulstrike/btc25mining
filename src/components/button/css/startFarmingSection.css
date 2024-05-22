@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'ST-SimpleSquare';
     src: url('../assets/fonts/ST-SimpleSquare.ttf') format('truetype');
+    font-display: swap;
   }
   
   .container {
