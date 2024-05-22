@@ -9,6 +9,8 @@ body {
 
 
 .btc-img{
-  height: 300px;
-  width: 400px;
+  height: 100px;
+  width: 100px;
+  margin-right: 100px;
+  margin-bottom: 100px;
 }
