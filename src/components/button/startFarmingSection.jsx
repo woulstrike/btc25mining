@@ -53,7 +53,7 @@ export function StartFarmingSection() {
     <div className="container">
       <div className="counter-display">
         <img src={coinImg} alt="Icon" className="icon" />
-        <span className="counter" style={{ color: isCounting ? 'white' : 'black' }}>{Math.floor(counter)}</span>
+        <span className="counter" style={{ color: isCounting ? 'white' : 'black', fontSize: '40px', paddingBottom: '50px' }}>{Math.floor(counter)}</span>
       </div>
       <button className={`centered-button ${isCounting ? 'farming' : ''}`} onClick={handleClick} disabled={isCounting}>
         {isCounting ? 'Farming...' : 'Start Farm'}
