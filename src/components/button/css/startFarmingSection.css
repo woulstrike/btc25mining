@@ -59,7 +59,7 @@
 }
   
 .counter {
-    font-family: 'ST-SimpleSquare', 'Jaro', sans-serif;
+    font-family: 'ST-SimpleSquare', 'Jaro', 'Arial Black',sans-serif;
     color: rgb(255, 255, 255);
     margin-bottom: 120px; 
 }
