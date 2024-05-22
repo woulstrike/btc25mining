@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react'
 import './css/startFarmingSection.css'
 import coinImg from '../assets/coin.png'
@@ -7,42 +6,33 @@ export function StartFarmingSection() {
   const initialCounter = parseInt(localStorage.getItem('counter')) || 0
   const [counter, setCounter] = useState(initialCounter)
   const [isCounting, setIsCounting] = useState(false)
-  const incrementValue = 40000
-  const duration = 8 * 60 * 60
-  const incrementPerSecond = incrementValue / duration
+  const duration = 8 * 60 * 60 * 1000
+  const incrementPerSecond = 1
 
   useEffect(() => {
     if (isCounting) {
-      const endTime = Date.now() + duration * 1000
+      const startTime = Date.now()
       localStorage.setItem('counter', counter)
-      localStorage.setItem('endTime', endTime)
+      localStorage.setItem('startTime', startTime)
 
       const timer = setInterval(() => {
         setCounter((prevCounter) => {
           const newCounter = prevCounter + incrementPerSecond
           localStorage.setItem('counter', newCounter)
-
-          if (newCounter >= initialCounter + incrementValue) {
-            clearInterval(timer)
-            setIsCounting(false)
-            localStorage.removeItem('endTime')
-            return initialCounter + incrementValue
-          }
-
-          return newCounter
-        });
+          return newCounter;
+        })
       }, 1000)
-
+      
       return () => clearInterval(timer)
     }
   }, [isCounting])
 
   useEffect(() => {
-    const savedEndTime = parseInt(localStorage.getItem('endTime'))
-    if (savedEndTime && Date.now() < savedEndTime) {
+    const savedStartTime = parseInt(localStorage.getItem('startTime'))
+    if (savedStartTime && Date.now() - savedStartTime < duration) {
       setIsCounting(true)
     }
-  }, []);
+  }, [])
 
   const handleClick = () => {
     setCounter(initialCounter)
@@ -52,10 +42,15 @@ export function StartFarmingSection() {
   return (
     <div className="container">
       <div className="counter-display">
-        <img src={coinImg} alt="Icon" className="icon" />
-        <span className="counter" style={{ color: isCounting ? 'white' : 'black', fontSize: '40px', paddingBottom: '50px', paddingLeft: '60px' }}>{Math.floor(counter)}</span>
+        <div className="icon-container">
+          <img src={coinImg} alt="Icon" className="icon" />
+          <span className="icon-text">BTC25</span>
+        </div>
+        <span className="counter" style={{ color: isCounting ? 'white' : 'black', fontSize: '40px', paddingBottom: '50px', paddingLeft: '60px'}}>
+          {counter.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: true })}
+        </span>
       </div>
-      <button className={`centered-button ${isCounting ? 'farming' : ''}` } onClick={handleClick} disabled={isCounting}>
+      <button className={`centered-button ${isCounting ? 'farming' : ''}`} onClick={handleClick} disabled={isCounting}>
         {isCounting ? 'Farming...' : 'Start Farm'}
       </button>
     </div>
