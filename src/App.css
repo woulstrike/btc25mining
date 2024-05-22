@@ -3,7 +3,6 @@ body {
   padding: 0;
   background-image: url('../public/stars.gif');
   background-position: center top;
-  max-width: 1920;
   height: 100px; 
   overflow: hidden; 
 }
@@ -11,5 +10,5 @@ body {
 
 .btc-img{
   height: 400px;
-  margin-left: 700px;
+  margin-left: 500px;
 }
