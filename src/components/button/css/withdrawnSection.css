@@ -12,21 +12,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 300px;
-  margin-top: 100px;
+  margin-left: 200px;
+  margin-top: 200px;
 
 }
 
 
 
 .icon {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
 }
 
 .icon-text {
   font-size: 16px;
-  color: gray;
+  color: white;
   margin-top: 8px;
   font-family: 'ST-SimpleSquare', 'Jaro', sans-serif;
 }
