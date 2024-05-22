@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react'
 import './css/startFarmingSection.css'
 import coinImg from '../assets/coin.png'
