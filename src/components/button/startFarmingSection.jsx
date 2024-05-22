@@ -19,10 +19,10 @@ export function StartFarmingSection() {
         setCounter((prevCounter) => {
           const newCounter = prevCounter + incrementPerSecond
           localStorage.setItem('counter', newCounter)
-          return newCounter;
+          return newCounter
         })
       }, 1000)
-      
+
       return () => clearInterval(timer)
     }
   }, [isCounting])
@@ -39,6 +39,13 @@ export function StartFarmingSection() {
     setIsCounting(true)
   };
 
+  const formatCounter = (count) => {
+    return count.toLocaleString('en-US', {
+      minimumIntegerDigits: 9,
+      useGrouping: true,
+    }).replace(/,/g, '.')
+  };
+
   return (
     <div className="container">
       <div className="counter-display">
@@ -46,8 +53,8 @@ export function StartFarmingSection() {
           <img src={coinImg} alt="Icon" className="icon" />
           <span className="icon-text">BTC25</span>
         </div>
-        <span className="counter" style={{ color: isCounting ? 'white' : 'white', fontSize: '40px', paddingBottom: '40px', paddingLeft: '63px'}}>
-          {counter.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: true })}
+        <span className="counter">
+          {formatCounter(counter)}
         </span>
       </div>
       <button className={`centered-button ${isCounting ? 'farming' : ''}`} onClick={handleClick} disabled={isCounting}>
