@@ -1,11 +1,46 @@
-import './App.css'
-import { Home } from './components/switch/Home.jsx'
+import { useState } from 'react'
+import { HomeButton } from './components/header/jsx/homeSection'
+import { TasksButton } from './components/header/jsx/tasksSection'
+import { InviteButton } from './components/header/jsx/inviteSection'
+import { Home } from './components/switch/Home'
+import { Invite } from './components/switch/Invite'
+import { Tasks } from './components/switch/Tasks'
+import './App.css';
+import './components/header/css/headersBtn.css'
+
+
+
+
+
+
 
 
 export default function App() {
-    return (
-        <>           
-            < Home/>
-        </>
-    )
+  const [activeWindow, setActiveWindow] = useState('home');
+
+  const renderWindow = () => {
+    switch (activeWindow) {
+      case 'home':
+        return <Home />;
+      case 'tasks':
+        return <Tasks />;
+      case 'invite':
+        return <Invite />;
+      default:
+        return <Home />;
+    }
+  };
+
+  return (
+    <div className="app-container">
+      <div className="button-container">
+        <HomeButton onClick={() => setActiveWindow('home')} />
+        <TasksButton onClick={() => setActiveWindow('tasks')} />
+        <InviteButton onClick={() => setActiveWindow('invite')} />
+      </div>
+      <div className="content">
+        {renderWindow()}
+      </div>
+    </div>
+  );
 }
