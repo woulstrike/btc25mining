@@ -1,8 +1,14 @@
-.background {
-    margin: 0;
-    padding: 0;
-    background-image: url('../../../../public/stars.gif');
-    background-position: center top;
-    height: 100px; 
-    overflow: hidden;
-  }
+@font-face {
+  font-family: 'ST-SimpleSquare';
+  src: url('../../button/assets/fonts/ST-SimpleSquare.woff') format('woff'),
+      url('../../button/assets/fonts/ST-SimpleSquare_1.woff') format('woff');
+  font-display: swap;
+}
+
+.inscription{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'ST-SimpleSquare';
+  font-size: 15px;
+}
