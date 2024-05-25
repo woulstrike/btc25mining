@@ -48,7 +48,7 @@ export function StartFarmingSection() {
   };
 
   return (
-    <div className="container" style={{paddingBottom: '0', paddingTop:'300px'}}>
+    <div className="container" style={{paddingBottom: '0'}}>
       <div className="content-wrapper">
         <div className="icon-container">
           <img src={coinImg} alt="Icon" className="icon" />
