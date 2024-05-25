@@ -1,9 +1,8 @@
 export function Invite() {
     return (
-      <>
-      <div className="background">
-        
+      <div>
+        <h1>Invite</h1>
+        <p>Invite your friends!</p>
       </div>
-      </>
     );
   }

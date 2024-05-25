@@ -1,11 +1,9 @@
-
-import PropTypes from 'prop-types'
 import homeImg from '../../assets/home.png'
 import './../css/homeButton.css'
 
-export function HomeButton({ onClick }) {
+export function HomeButton() {
   return (
-    <button className="btn-image" onClick={onClick}>
+    <button className="btn-image">
       <img src={homeImg} alt="Home" className="btn-image__icon" />
       <span className="btn-image__text">Home</span>
     </button>
@@ -13,6 +11,4 @@ export function HomeButton({ onClick }) {
 }
 
 
-HomeButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
-}
+

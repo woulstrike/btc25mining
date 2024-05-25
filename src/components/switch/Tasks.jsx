@@ -1,11 +1,8 @@
-import './css/Task.css'
-
 export function Tasks() {
     return (
-      <>
-      <div className="background">
-        <p>adslifyg</p>
+      <div>
+        <h1>Tasks</h1>
+        <p>Here are your tasks.</p>
       </div>
-      </>
     );
   }
