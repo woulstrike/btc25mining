@@ -62,7 +62,7 @@
 
 .counter-display {
     align-items: center;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     margin-right: 30px;
 }
@@ -70,9 +70,10 @@
 .counter {
     font-family: 'ST-SimpleSquare', 'Jaro', 'Arial Black',sans-serif;
     color: rgb(255, 255, 255);
-    font-size: 23px;
+    font-size: 35px;
     text-align: center;
     padding-top: 80px;
+    padding-right: 60px;
 }
 
 .icon-container {

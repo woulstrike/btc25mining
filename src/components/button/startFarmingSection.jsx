@@ -34,15 +34,12 @@ export function StartFarmingSection() {
   }, []);
 
   const handleClick = () => {
-    const startTime = Date.now();
-    localStorage.setItem('startTime', startTime);
-    setCounter(initialCounter);
     setIsCounting(true);
   };
 
   const formatCounter = (count) => {
-    const paddedCount = count.toFixed(9).replace('.', '');
-    const formattedCount = `${paddedCount.slice(0, 3)}.${paddedCount.slice(3, 6)}.${paddedCount.slice(6, 9)}`;
+    const paddedCount = count.toFixed(6).replace('.', '');
+    const formattedCount = `${paddedCount.slice(0, 3)}.${paddedCount.slice(3, 6)}`;
     return formattedCount;
   };
 
