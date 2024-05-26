@@ -2,13 +2,12 @@ import { useState, useEffect } from 'react'
 import './css/startFarmingSection.css'
 import coinImg from '../assets/coin.png'
 
-
 export function StartFarmingSection() {
   const initialCounter = parseInt(localStorage.getItem('counter')) || 0;
   const [counter, setCounter] = useState(initialCounter);
   const [isCounting, setIsCounting] = useState(false);
-  const duration = 8 * 60 * 60 * 1000;
-  const incrementPerSecond = 1;
+  const duration = 8 * 60 * 60 * 1000; 
+  const incrementPerSecond = 57 / (8 * 60 * 60); 
 
   useEffect(() => {
     if (isCounting) {
@@ -22,7 +21,7 @@ export function StartFarmingSection() {
           localStorage.setItem('counter', newCounter);
           return newCounter;
         });
-      }, 1000);
+      }, 1000); 
 
       return () => clearInterval(timer);
     }
