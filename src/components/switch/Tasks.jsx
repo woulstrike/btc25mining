@@ -13,7 +13,7 @@ export function Tasks() {
   }, [counter]);
 
   const handleReward = () => {
-    const newCounter = counter + 10000;
+    const newCounter = counter + 1000;
     setCounter(newCounter);
     localStorage.setItem('counter', newCounter);
   };

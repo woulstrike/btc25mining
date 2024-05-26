@@ -38,8 +38,8 @@ export function StartFarmingSection() {
   };
 
   const formatCounter = (count) => {
-    const paddedCount = count.toFixed(6).replace('.', '');
-    const formattedCount = `${paddedCount.slice(0, 3)}.${paddedCount.slice(3, 6)}`;
+    const paddedCount = count.toFixed(6).replace('.', '').padStart(9, '0');
+    const formattedCount = `${paddedCount.slice(0, 1)}.${paddedCount.slice(1, 4)}.${paddedCount.slice(4, 7)}`;
     return formattedCount;
   };
 
