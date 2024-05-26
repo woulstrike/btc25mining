@@ -6,27 +6,25 @@ export function StartFarmingSection() {
   const initialCounter = parseFloat(localStorage.getItem('counter')) || 0;
   const [counter, setCounter] = useState(initialCounter);
   const [isCounting, setIsCounting] = useState(false);
-  const duration = 8 * 60 * 60 * 1000; // 8 hours in milliseconds
+  const duration = 8 * 60 * 60 * 1000; // 8 часов в миллисекундах
   const totalIncrement = 57;
-  const incrementPerSecond = totalIncrement / (8 * 60 * 60); // Increment value for each second
+  const incrementPerSecond = totalIncrement / (8 * 60 * 60); // Увеличение на каждую секунду
 
   useEffect(() => {
     if (isCounting) {
-      const startTime = Date.now();
-      localStorage.setItem('counter', counter);
+      const startTime = parseInt(localStorage.getItem('startTime')) || Date.now();
       localStorage.setItem('startTime', startTime);
 
       const timer = setInterval(() => {
-        setCounter((prevCounter) => {
-          const newCounter = prevCounter + incrementPerSecond;
-          localStorage.setItem('counter', newCounter);
-          return newCounter;
-        });
-      }, 1000); // Update every second
+        const elapsedTime = (Date.now() - startTime) / 1000; // прошедшее время в секундах
+        const newCounter = initialCounter + elapsedTime * incrementPerSecond;
+        setCounter(newCounter);
+        localStorage.setItem('counter', newCounter);
+      }, 1000); // Обновление каждую секунду
 
       return () => clearInterval(timer);
     }
-  }, [isCounting]);
+  }, [isCounting, initialCounter]);
 
   useEffect(() => {
     const savedStartTime = parseInt(localStorage.getItem('startTime'));
@@ -36,6 +34,8 @@ export function StartFarmingSection() {
   }, []);
 
   const handleClick = () => {
+    const startTime = Date.now();
+    localStorage.setItem('startTime', startTime);
     setCounter(initialCounter);
     setIsCounting(true);
   };
