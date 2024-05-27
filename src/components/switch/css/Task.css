@@ -28,18 +28,18 @@
 }
 
 .task-content {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .imgtg {
   width: 30px;
   height: 30px;
   margin-bottom: 10px;
+  margin-right: 350px;
 }
 
 .text {
@@ -52,11 +52,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px; 
+  margin-top: 20px;
+  margin-left: 350px; 
+
 }
 
 .reward-button {
-  background-color: #50b9ff;
   color: white;
   border: none;
   padding: 15px;

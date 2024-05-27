@@ -18,11 +18,12 @@ export function Tasks() {
   };
 
   return (
-  <>      <span className="inscription">
-              <h1 style={{ color: 'white' }}>TASKS</h1>
-              <p style={{ color: '#00FFE0' }}>
-                We’ll reward you immediately <br />
-                with points after each task completion
+  <>      
+    <span className="inscription">
+        <h1 style={{ color: 'white' }}>TASKS</h1>
+          <p style={{ color: '#00FFE0' }}>
+            We’ll reward you immediately <br />
+            with points after each task completion
           </p>
         </span>
     <div className="task-container">
@@ -30,11 +31,11 @@ export function Tasks() {
         <div className="container">
           <img src={telegramImg} alt="telegram" className="imgtg" />
           <span className="text">Join our Russian community and get coins <br />
-          <span className='quantity'></span></span>
-        </div>
-        <div className="reward-button-container">
-          <RewardButton onReward={handleReward} />
-          <span className="reward-button-text"></span>
+          <span className='quantity'>+1000</span></span>
+          <div className="reward-button-container">
+            <RewardButton onReward={handleReward} />
+            <span className="reward-button-text"></span>
+          </div>
         </div>
       </div>
     </div>
