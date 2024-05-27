@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 1.25em;
 }
 
 .icon-button {
@@ -12,21 +12,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 270px;
-  margin-top: 5px;
-
+  margin-left: 1.875em;
+  margin-top: 0.3125em;
 }
 
-
-
 .icon {
-  width: 100px;
-  height: 100px;
+  width: 6.25em;
+  height: 6.25em;
 }
 
 .icon-text {
-  font-size: 16px;
+  font-size: 1em;
   color: white;
-  margin-top: 8px;
+  margin-top: 0.5em;
   font-family: 'ST-SimpleSquare', 'Jaro', sans-serif;
+}
+
+
+@media (max-width: 768px) {
+  .icon-button {
+      margin-left: 0;
+      margin-top: 0.3125em;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .icon-button {
+      margin-left: 0;
+      margin-top: 0.3125em;
+  }
+
+  .icon {
+      width: 4em;
+      height: 4em;
+  }
+
+  .icon-text {
+      font-size: 0.875em;
+      margin-top: 0.375em;
+  }
 }

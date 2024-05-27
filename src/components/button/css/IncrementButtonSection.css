@@ -1,14 +1,35 @@
 .reward-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .reward-button:disabled {
-    cursor: not-allowed;
-  }
-  
+  cursor: not-allowed;
+}
+
 .button-icon {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
+  transition: width 0.3s, height 0.3s;
+}
+
+
+@media (max-width: 768px) {
+  .button-icon {
+      width: 40px;
+      height: 40px;
   }
+}
+
+@media (max-width: 480px) {
+  .button-icon {
+      width: 30px;
+      height: 30px;
+  }
+}
