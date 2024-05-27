@@ -22,7 +22,10 @@ function useInterval(callback, delay) {
 }
 
 export function StartFarmingSection() {
-  const [counter, setCounter] = useState(() => parseFloat(localStorage.getItem('counter')) || 0);
+  const [counter, setCounter] = useState(() => {
+    const savedCounter = parseFloat(localStorage.getItem('counter')) || 0;
+    return savedCounter;
+  });
   const [isCounting, setIsCounting] = useState(() => {
     const savedStartTime = parseInt(localStorage.getItem('startTime'));
     return savedStartTime && (Date.now() - savedStartTime < 8 * 60 * 60 * 1000);
@@ -33,35 +36,35 @@ export function StartFarmingSection() {
   });
 
   const startTimeRef = useRef(parseInt(localStorage.getItem('startTime')) || null);
-  const incrementPerSecond = 57 / (8 * 60 * 60 * 60);
+  const incrementPerSecond = 57 / (8 * 60 * 60 * 60); 
 
   useEffect(() => {
     const savedStartTime = parseInt(localStorage.getItem('startTime'));
-    if (savedStartTime && Date.now() - savedStartTime < 8 * 60 * 60 * 1000) {
+    if (savedStartTime) {
       setIsCounting(true);
       setIsButtonDisabled(true);
       startTimeRef.current = savedStartTime;
-      const elapsedTime = (Date.now() - savedStartTime) / 1000;
-      const newCounter = (parseFloat(localStorage.getItem('counter')) || 0) + elapsedTime * incrementPerSecond;
-      setCounter(newCounter);
     }
   }, []);
 
   useInterval(() => {
     if (isCounting) {
       const elapsedTime = (Date.now() - startTimeRef.current) / 1000;
-      const newCounter = elapsedTime * incrementPerSecond;
+      const newCounter = (parseFloat(localStorage.getItem('initialCounter')) || 0) + elapsedTime * incrementPerSecond;
       setCounter(newCounter);
       localStorage.setItem('counter', newCounter);
     }
   }, isCounting ? 1000 : null);
 
   const handleClick = () => {
-    setIsCounting(true);
-    setIsButtonDisabled(true);
-    const startTime = Date.now();
-    startTimeRef.current = startTime;
-    localStorage.setItem('startTime', startTime);
+    if (!isCounting) {
+      setIsCounting(true);
+      setIsButtonDisabled(true);
+      const startTime = Date.now();
+      startTimeRef.current = startTime;
+      localStorage.setItem('startTime', startTime);
+      localStorage.setItem('initialCounter', counter);
+    }
   };
 
   const formatCounter = (count) => {
