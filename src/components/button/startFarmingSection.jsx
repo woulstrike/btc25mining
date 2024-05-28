@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import './css/startFarmingSection.css';
 import coinImg from '../assets/coin.png';
 
-
 function useInterval(callback, delay) {
   const savedCallback = useRef();
 
@@ -39,10 +38,23 @@ export function StartFarmingSection() {
       setIsButtonDisabled(true);
       startTimeRef.current = savedStartTime;
     } else if (savedStartTime) {
-
       localStorage.removeItem('startTime');
       localStorage.removeItem('initialCounter');
     }
+  }, []);
+
+  useEffect(() => {
+    function handleStorageChange(event) {
+      if (event.key === 'counter') {
+        setCounter(parseFloat(event.newValue));
+      }
+    }
+
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, []);
 
   useInterval(() => {
@@ -83,10 +95,10 @@ export function StartFarmingSection() {
   };
 
   return (
-    <div className="container" style={{ marginBottom: '0' }}>
+    <div className="container" style={{ paddingBottom: '0' }}>
       <div className="content-wrapper">
         <div className="icon-container" style={{margin: '0', marginTop: '6.25em'}}>
-          <img src={coinImg} alt="Icon" className="icon-counter" style={{ width: '75px', height: '75px' }} />
+          <img src={coinImg} alt="Icon" className="icon" style={{ width: '75px', height: '75px' }} />
           <span className="icon-text">@BTC25</span>
         </div>
         <span className="counter">

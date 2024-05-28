@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import locked from '../assets/success-task.png';
 import unlock from '../assets/arrow-tasks.png';
 import './css/IncrementButtonSection.css';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 export function RewardButton({ onReward }) {
   const [isClicked, setIsClicked] = useState(
@@ -14,6 +14,11 @@ export function RewardButton({ onReward }) {
   }, [isClicked]);
 
   const handleClick = () => {
+    const rewardAmount = 1000;
+    const currentCounter = parseFloat(localStorage.getItem('counter')) || 0;
+    const newCounter = currentCounter + rewardAmount;
+    localStorage.setItem('counter', newCounter);
+
     onReward();
     setIsClicked(true);
   };

@@ -33,7 +33,9 @@ export function Tasks() {
           <span className='quantity'>+1000</span>
         </span>
         <div className="reward-button-container">
-          <RewardButton onReward={handleReward} />
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <RewardButton onReward={handleReward} />
+          </a>
           <span className="reward-button-text"></span>
         </div>
       </div>
