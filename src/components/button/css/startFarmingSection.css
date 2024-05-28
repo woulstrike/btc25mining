@@ -84,7 +84,7 @@
     margin: 0;
 }
 
-.icon {
+.icon-counter {
     width: 3.125em;
     height: 3.125em;
 }
@@ -132,11 +132,14 @@
     .container {
         width: 100%;
         max-width: 300px;
+        margin-top: 0;
     }
 
     .centered-button {
+        margin-bottom: 2em;
         padding: 1em 0;
         font-size: 0.875em;
+
     }
 
     .counter-display {
@@ -145,14 +148,15 @@
     }
 
     .counter {
-        font-size: 1.5625em;
-        padding-top: 3em;
+        font-size: 1.725em;
+        padding-top: 5em;
         padding-right: 2.5em;
     }
 
-    .icon {
+    .icon-counter {
         width: 2em;
         height: 2em;
+        margin-bottom: 0;
     }
 
     .icon-text {

@@ -86,7 +86,7 @@ export function StartFarmingSection() {
     <div className="container" style={{ marginBottom: '0' }}>
       <div className="content-wrapper">
         <div className="icon-container" style={{margin: '0', marginTop: '6.25em'}}>
-          <img src={coinImg} alt="Icon" className="icon" style={{ width: '75px', height: '75px' }} />
+          <img src={coinImg} alt="Icon" className="icon-counter" style={{ width: '75px', height: '75px' }} />
           <span className="icon-text">@BTC25</span>
         </div>
         <span className="counter">
