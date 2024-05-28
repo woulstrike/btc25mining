@@ -15,10 +15,13 @@ export function Tasks() {
     const newCounter = counter + 1000;
     setCounter(newCounter);
     localStorage.setItem('counter', newCounter);
+
+   
+    window.dispatchEvent(new Event('storage'));
   };
 
   return (
-    <>      
+    <>
       <span className="inscription">
         <h1 style={{ color: 'white' }}>TASKS</h1>
         <p style={{ color: '#00FFE0' }}>
@@ -30,7 +33,7 @@ export function Tasks() {
         <img src={telegramImg} alt="telegram" className="imgtg" />
         <span className="text">
           Join our Telegram channel and get coins<br />
-          <span className='quantity'>+1000</span>
+          <span className='quantity' style={{color: '#00FFE0'}}>+1000</span>
         </span>
         <div className="reward-button-container">
           <a href="https://t.me/btc25" target="_blank" rel="noopener noreferrer">
@@ -43,7 +46,7 @@ export function Tasks() {
         <img src={telegramImg} alt="telegram" className="imgtg" />
         <span className="text">
           Join our Telegram  chat and get coins<br />
-          <span className='quantity'>+1000</span>
+          <span className='quantity' style={{color: '#00FFE0'}}>+1000</span>
         </span>
         <div className="reward-button-container">
           <a href="https://t.me/TONBTC25" target="_blank" rel="noopener noreferrer">
@@ -56,7 +59,7 @@ export function Tasks() {
         <img src={telegramImg} alt="telegram" className="imgtg" />
         <span className="text">
           Join our X and get coins<br />
-          <span className='quantity'>+1000</span>
+          <span className='quantity' style={{color: '#00FFE0'}}>+1000</span>
         </span>
         <div className="reward-button-container">
           <a href="https://x.com/daoproxima" target="_blank" rel="noopener noreferrer">
@@ -69,7 +72,7 @@ export function Tasks() {
         <img src={telegramImg} alt="telegram" className="imgtg" />
         <span className="text">
           Join our Galxe and get coins<br />
-          <span className='quantity'>+1000</span>
+          <span className='quantity' style={{color: '#00FFE0'}}>+1000</span>
         </span>
         <div className="reward-button-container">
           <a href="https://app.galxe.com/quest/TonMiner" target="_blank" rel="noopener noreferrer">
@@ -82,7 +85,8 @@ export function Tasks() {
         <img src={telegramImg} alt="telegram" className="imgtg" />
         <span className="text">
           Download Tonkeeper and get coins<br />
-          <span className='quantity'>+1000</span>
+          and then send the screenshot to the bot <br />
+          <span className='quantity' style={{color: '#00FFE0'}}>+1000</span>
         </span>
         <div className="reward-button-container">
           <a href="https://tonkeeper.com/" target="_blank" rel="noopener noreferrer">

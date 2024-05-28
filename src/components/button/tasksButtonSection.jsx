@@ -4,6 +4,20 @@ import unlock from '../assets/arrow-tasks.png';
 import './css/IncrementButtonSection.css';
 import PropTypes from 'prop-types';
 
+const updateCounter = (rewardAmount, onReward, setIsClicked) => {
+  const currentCounter = parseFloat(localStorage.getItem('counter')) || 0;
+  const newCounter = currentCounter + rewardAmount;
+  localStorage.setItem('counter', newCounter);
+
+  const storageEvent = new Event('storage');
+  storageEvent.key = 'counter';
+  storageEvent.newValue = newCounter.toString();
+  window.dispatchEvent(storageEvent);
+
+  onReward();
+  setIsClicked(true);
+};
+
 export function ChannelSrcButton({ onReward }) {
   const [isClicked, setIsClicked] = useState(
     localStorage.getItem('isChannelBtnClicked') === 'true'
@@ -14,13 +28,7 @@ export function ChannelSrcButton({ onReward }) {
   }, [isClicked]);
 
   const handleClick = () => {
-    const rewardAmount = 1000;
-    const currentCounter = parseFloat(localStorage.getItem('counter')) || 0;
-    const newCounter = currentCounter + rewardAmount;
-    localStorage.setItem('counter', newCounter);
-
-    onReward();
-    setIsClicked(true);
+    updateCounter(0.001, onReward, setIsClicked);
   };
 
   return (
@@ -38,7 +46,6 @@ export function ChannelSrcButton({ onReward }) {
   );
 }
 
-
 export function MainSrcButton({ onReward }) {
   const [isClicked, setIsClicked] = useState(
     localStorage.getItem('isMainChatBtnClicked') === 'true'
@@ -49,13 +56,7 @@ export function MainSrcButton({ onReward }) {
   }, [isClicked]);
 
   const handleClick = () => {
-    const rewardAmount = 1000;
-    const currentCounter = parseFloat(localStorage.getItem('counter')) || 0;
-    const newCounter = currentCounter + rewardAmount;
-    localStorage.setItem('counter', newCounter);
-
-    onReward();
-    setIsClicked(true);
+    updateCounter(0.001, onReward, setIsClicked);
   };
 
   return (
@@ -83,13 +84,7 @@ export function TwitterSrcButton({ onReward }) {
   }, [isClicked]);
 
   const handleClick = () => {
-    const rewardAmount = 1000;
-    const currentCounter = parseFloat(localStorage.getItem('counter')) || 0;
-    const newCounter = currentCounter + rewardAmount;
-    localStorage.setItem('counter', newCounter);
-
-    onReward();
-    setIsClicked(true);
+    updateCounter(0.001, onReward, setIsClicked); 
   };
 
   return (
@@ -117,13 +112,7 @@ export function GalxeSrcButton({ onReward }) {
   }, [isClicked]);
 
   const handleClick = () => {
-    const rewardAmount = 1000;
-    const currentCounter = parseFloat(localStorage.getItem('counter')) || 0;
-    const newCounter = currentCounter + rewardAmount;
-    localStorage.setItem('counter', newCounter);
-
-    onReward();
-    setIsClicked(true);
+    updateCounter(0.001, onReward, setIsClicked); 
   };
 
   return (
@@ -151,13 +140,7 @@ export function TonkeeperSrcButton({ onReward }) {
   }, [isClicked]);
 
   const handleClick = () => {
-    const rewardAmount = 1000;
-    const currentCounter = parseFloat(localStorage.getItem('counter')) || 0;
-    const newCounter = currentCounter + rewardAmount;
-    localStorage.setItem('counter', newCounter);
-
-    onReward();
-    setIsClicked(true);
+    updateCounter(0.001, onReward, setIsClicked); 
   };
 
   return (
@@ -181,16 +164,12 @@ TonkeeperSrcButton.propTypes = {
 GalxeSrcButton.propTypes = {
   onReward: PropTypes.func.isRequired,
 };
-
 TwitterSrcButton.propTypes = {
   onReward: PropTypes.func.isRequired,
 };
-
-
 MainSrcButton.propTypes = {
   onReward: PropTypes.func.isRequired,
 };
-
 ChannelSrcButton.propTypes = {
   onReward: PropTypes.func.isRequired,
 };

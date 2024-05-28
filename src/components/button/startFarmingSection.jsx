@@ -29,7 +29,7 @@ export function StartFarmingSection() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const startTimeRef = useRef(parseInt(localStorage.getItem('startTime')) || null);
-  const incrementPerSecond = 57000 / (8 * 60 * 60 * 60 * 60 * 4); 
+  const incrementPerSecond = 57 / (8 * 60 * 60 * 60); 
 
   useEffect(() => {
     const savedStartTime = parseInt(localStorage.getItem('startTime'));
@@ -64,7 +64,7 @@ export function StartFarmingSection() {
       setCounter(newCounter);
       localStorage.setItem('counter', newCounter);
     }
-  }, isCounting ? 1500 : null);
+  }, isCounting ? 1000 : null);
 
   const handleClick = () => {
     if (!isCounting) {
@@ -97,7 +97,7 @@ export function StartFarmingSection() {
   return (
     <div className="container" style={{ paddingBottom: '0' }}>
       <div className="content-wrapper">
-        <div className="icon-container" style={{margin: '0', marginTop: '6.25em'}}>
+        <div className="icon-container" style={{ margin: '0', marginTop: '6.25em' }}>
           <img src={coinImg} alt="Icon" className="icon" style={{ width: '75px', height: '75px' }} />
           <span className="icon-text">@BTC25</span>
         </div>
