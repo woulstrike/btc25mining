@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './css/Task.css';
 import telegramImg from '../assets/telegram-icon.png';
-import { RewardButton } from '../button/tasksButtonSection';
+import { MainSrcButton, ChannelSrcButton, GalxeSrcButton, TwitterSrcButton, TonkeeperSrcButton } from '../button/tasksButtonSection';
 
 export function Tasks() {
   const initialCounter = parseInt(localStorage.getItem('counter')) || 0;
@@ -29,12 +29,64 @@ export function Tasks() {
       <div className="task-container">
         <img src={telegramImg} alt="telegram" className="imgtg" />
         <span className="text">
-          Join our Russian community and get coins <br />
+          Join our Telegram channel and get coins<br />
           <span className='quantity'>+1000</span>
         </span>
         <div className="reward-button-container">
-          <a href="" target="_blank" rel="noopener noreferrer">
-            <RewardButton onReward={handleReward} />
+          <a href="https://t.me/btc25" target="_blank" rel="noopener noreferrer">
+            <ChannelSrcButton onReward={handleReward} />
+          </a>
+          <span className="reward-button-text"></span>
+        </div>
+      </div>
+      <div className="task-container">
+        <img src={telegramImg} alt="telegram" className="imgtg" />
+        <span className="text">
+          Join our Telegram  chat and get coins<br />
+          <span className='quantity'>+1000</span>
+        </span>
+        <div className="reward-button-container">
+          <a href="https://t.me/TONBTC25" target="_blank" rel="noopener noreferrer">
+            <MainSrcButton onReward={handleReward} />
+          </a>
+          <span className="reward-button-text"></span>
+        </div>
+      </div>
+      <div className="task-container">
+        <img src={telegramImg} alt="telegram" className="imgtg" />
+        <span className="text">
+          Join our X and get coins<br />
+          <span className='quantity'>+1000</span>
+        </span>
+        <div className="reward-button-container">
+          <a href="https://x.com/daoproxima" target="_blank" rel="noopener noreferrer">
+            <TwitterSrcButton onReward={handleReward} />
+          </a>
+          <span className="reward-button-text"></span>
+        </div>
+      </div>
+      <div className="task-container">
+        <img src={telegramImg} alt="telegram" className="imgtg" />
+        <span className="text">
+          Join our Galxe and get coins<br />
+          <span className='quantity'>+1000</span>
+        </span>
+        <div className="reward-button-container">
+          <a href="https://app.galxe.com/quest/TonMiner" target="_blank" rel="noopener noreferrer">
+            <GalxeSrcButton onReward={handleReward} />
+          </a>
+          <span className="reward-button-text"></span>
+        </div>
+      </div>
+      <div className="task-container">
+        <img src={telegramImg} alt="telegram" className="imgtg" />
+        <span className="text">
+          Download Tonkeeper and get coins<br />
+          <span className='quantity'>+1000</span>
+        </span>
+        <div className="reward-button-container">
+          <a href="https://tonkeeper.com/" target="_blank" rel="noopener noreferrer">
+            <TonkeeperSrcButton onReward={handleReward} />
           </a>
           <span className="reward-button-text"></span>
         </div>

@@ -29,7 +29,7 @@ export function StartFarmingSection() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const startTimeRef = useRef(parseInt(localStorage.getItem('startTime')) || null);
-  const incrementPerSecond = 57000 / (8 * 60 * 60 * 60 * 60); 
+  const incrementPerSecond = 57000 / (8 * 60 * 60 * 60 * 60 * 4); 
 
   useEffect(() => {
     const savedStartTime = parseInt(localStorage.getItem('startTime'));
@@ -64,7 +64,7 @@ export function StartFarmingSection() {
       setCounter(newCounter);
       localStorage.setItem('counter', newCounter);
     }
-  }, isCounting ? 1000 : null);
+  }, isCounting ? 1500 : null);
 
   const handleClick = () => {
     if (!isCounting) {
