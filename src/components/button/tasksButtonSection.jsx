@@ -8,7 +8,6 @@ const updateCounter = (rewardAmount, onReward, setIsClicked) => {
   const currentCounter = parseFloat(localStorage.getItem('counter')) || 0;
   const newCounter = currentCounter + rewardAmount;
   localStorage.setItem('counter', newCounter);
-
   const storageEvent = new Event('storage');
   storageEvent.key = 'counter';
   storageEvent.newValue = newCounter.toString();
@@ -28,7 +27,7 @@ export function ChannelSrcButton({ onReward }) {
   }, [isClicked]);
 
   const handleClick = () => {
-    updateCounter(0.001, onReward, setIsClicked);
+    updateCounter(0.1, onReward, setIsClicked);
   };
 
   return (
@@ -56,7 +55,7 @@ export function MainSrcButton({ onReward }) {
   }, [isClicked]);
 
   const handleClick = () => {
-    updateCounter(0.001, onReward, setIsClicked);
+    updateCounter(0.1, onReward, setIsClicked);
   };
 
   return (
@@ -76,15 +75,15 @@ export function MainSrcButton({ onReward }) {
 
 export function TwitterSrcButton({ onReward }) {
   const [isClicked, setIsClicked] = useState(
-    localStorage.getItem('isTwitterBtnClicked') === 'true'
+    localStorage.getItem('XBtnClicked') === 'true'
   );
 
   useEffect(() => {
-    localStorage.setItem('isTwitterBtnClicked', isClicked);
+    localStorage.setItem('XBtnClicked', isClicked);
   }, [isClicked]);
 
   const handleClick = () => {
-    updateCounter(0.001, onReward, setIsClicked); 
+    updateCounter(0.1, onReward, setIsClicked);
   };
 
   return (
@@ -112,7 +111,7 @@ export function GalxeSrcButton({ onReward }) {
   }, [isClicked]);
 
   const handleClick = () => {
-    updateCounter(0.001, onReward, setIsClicked); 
+    updateCounter(0.1, onReward, setIsClicked); 
   };
 
   return (
@@ -140,7 +139,7 @@ export function TonkeeperSrcButton({ onReward }) {
   }, [isClicked]);
 
   const handleClick = () => {
-    updateCounter(0.001, onReward, setIsClicked); 
+    updateCounter(0.1, onReward, setIsClicked); 
   };
 
   return (

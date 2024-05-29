@@ -29,7 +29,9 @@ export function StartFarmingSection() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const startTimeRef = useRef(parseInt(localStorage.getItem('startTime')) || null);
-  const incrementPerSecond = 57 / (8 * 60 * 60 * 60); 
+  const initialCounterRef = useRef(parseFloat(localStorage.getItem('counter')) || 0); // Используем useRef для сохранения начального значения счётчика
+
+  const incrementPerSecond = 0.000002; // 0.000002 за 8 часов
 
   useEffect(() => {
     const savedStartTime = parseInt(localStorage.getItem('startTime'));
@@ -60,7 +62,7 @@ export function StartFarmingSection() {
   useInterval(() => {
     if (isCounting) {
       const elapsedTime = (Date.now() - startTimeRef.current) / 1000;
-      const newCounter = (parseFloat(localStorage.getItem('initialCounter')) || 0) + elapsedTime * incrementPerSecond;
+      const newCounter = initialCounterRef.current + elapsedTime * incrementPerSecond; // Используем начальное значение счётчика
       setCounter(newCounter);
       localStorage.setItem('counter', newCounter);
     }
@@ -73,7 +75,7 @@ export function StartFarmingSection() {
       const startTime = Date.now();
       startTimeRef.current = startTime;
       localStorage.setItem('startTime', startTime);
-      localStorage.setItem('initialCounter', counter);
+      localStorage.setItem('initialCounter', counter); // Сохраняем начальное значение счётчика при нажатии кнопки
     }
   };
 
