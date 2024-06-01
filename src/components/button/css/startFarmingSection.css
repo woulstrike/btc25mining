@@ -11,8 +11,7 @@
 }
 
 .container {
-    position: fixed;
-    margin-top: 70px;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
@@ -70,7 +69,7 @@
 .counter {
     font-family: 'ST-SimpleSquare', 'Jaro', 'Arial Black', sans-serif;
     color: rgb(255, 255, 255);
-    font-size: 2.1875em;
+    font-size: 3.1875em;
     text-align: center;
     padding-top: 5em;
     padding-right: 3.5em;
@@ -81,7 +80,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
+    padding-top: 13em;
 }
 
 .icon-counter {
@@ -93,6 +92,7 @@
     font-size: 0.75em;
     color: rgb(255, 255, 255);
     margin-top: 0.375em;
+    font-family: 'ST-SimpleSquare', sans-serif;
 }
 
 
@@ -132,24 +132,25 @@
     .container {
         width: 100%;
         max-width: 300px;
-        margin-top: 0;
+        margin-top: -1.75em;
     }
 
     .centered-button {
         margin-bottom: 2em;
-        padding: 1em 0;
-        font-size: 0.875em;
+        padding: 1em 1em ;
+        font-size: 1em;
+        margin-top: 2em;
 
     }
 
     .counter-display {
-        font-size: 1.5em;
+        font-size: 2.5em;
         margin-right: 1em;
     }
 
     .counter {
         font-size: 1.725em;
-        padding-top: 5em;
+        padding-top: 9em;
         padding-right: 2.5em;
     }
 
@@ -157,6 +158,51 @@
         width: 2em;
         height: 2em;
         margin-bottom: 0;
+        padding-top: 5em;
+    }
+
+    .icon-text {
+        font-size: 0.625em;
+    }
+}
+
+
+@media (max-width: 380px) {
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .icon-container{
+        padding-top: 8em;
+    }
+
+    .centered-button {
+        margin-bottom: 1em;
+        padding: 1em 1em ;
+        font-size: 1em;
+        margin-top: 1em;
+
+    }
+    .content-wrapper{
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+    .counter-display {
+        font-size: 1.5em;
+        margin-right: 1em;
+    }
+
+    .counter {
+        font-size: 1.725em;
+        padding-top: 5.25em;
+        padding-right: 2.75em;
+    }
+
+    .icon-counter {
+        width: 1m;
+        height: 1em;
+        padding-top: 1rem;
     }
 
     .icon-text {
