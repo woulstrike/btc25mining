@@ -15,6 +15,7 @@ export function Invite() {
   return (
     <div className="invite-container">
       <h2 className="invite-title">Invite friends and get coins</h2>
+      <h4 className='invite-title-two'>something will be here soon...</h4>
       <button className="invite-button" onClick={handleCopyLink}>
         {isCopied ? 'Link Copied!' : 'Copy link'}
       </button>

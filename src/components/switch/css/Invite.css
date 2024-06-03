@@ -17,7 +17,7 @@
 }
   
   .invite-title {
-    margin-bottom: 1em;
+    margin-bottom: 6em;
     font-size: 1.5em;
     color: #00FFE0;
     font-family: 'ST-SimpleSquare', sans-serif;
@@ -44,3 +44,10 @@
     background-color: #ffffff;
 }
   
+.invite-title-two{
+  margin-bottom: 12rem;
+  font-size: 1.2em;
+  color: #ffffff;
+  font-family: 'ST-SimpleSquare', sans-serif;
+  text-align: center;
+}

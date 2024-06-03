@@ -7,7 +7,7 @@ import { Invite } from './components/switch/Invite'
 import { Tasks } from './components/switch/Tasks'
 import './App.css';
 import './components/header/css/headersBtn.css'
-
+// import { EmailAccess } from './components/switch/confirm'
 
 
 
@@ -16,6 +16,7 @@ import './components/header/css/headersBtn.css'
 
 
 export default function App() {
+  
   const [activeWindow, setActiveWindow] = useState('home');
 
   const renderWindow = () => {
@@ -32,15 +33,18 @@ export default function App() {
   };
 
   return (
-    <div className="app-container">
-      <div className="button-container">
-        <HomeButton onClick={() => setActiveWindow('home')} />
-        <TasksButton onClick={() => setActiveWindow('tasks')} />
-        <InviteButton onClick={() => setActiveWindow('invite')} />
-      </div>
-      <div className="content">
-        {renderWindow()}
-      </div>
-    </div>
+    <>
+    {/* <EmailAccess /> */}
+      <div className="app-container">
+       <div className="button-container">
+         <HomeButton onClick={() => setActiveWindow('home')} />
+         <TasksButton onClick={() => setActiveWindow('tasks')} />
+         <InviteButton onClick={() => setActiveWindow('invite')} />
+       </div>
+       <div className="content">
+         {renderWindow()}
+       </div>
+     </div>
+     </>
   );
 }
