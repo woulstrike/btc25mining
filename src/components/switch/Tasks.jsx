@@ -17,12 +17,12 @@ export function Tasks() {
             with points after each task completion
           </p>
         </span>
-        <div className="container">
+        <div className="task-container">
           <div className="task-container">
             <img src={telegramImg} alt="telegram" className="imgtg" />
             <span className="text">
               Join our Telegram channel and get coins<br />
-              <span className="quantity" style={{ color: '#00FFE0' }}>+1.000</span>
+              <span className="quantity" style={{ color: '#00FFE0'}}>+1.000</span>
             </span>
             <div className="reward-button-container">
               <a href="https://t.me/btc25" target="_blank" rel="noopener noreferrer">
