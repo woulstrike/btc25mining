@@ -1,6 +1,6 @@
 import "./css/startFarmingSection.css";
 import coinImg from "../assets/coin.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
 export function StartFarmingSection() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
