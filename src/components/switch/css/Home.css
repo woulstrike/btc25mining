@@ -1,12 +1,10 @@
-.btc-img{
-    width: 100%;
-    margin-bottom: 0;
+.btc-img {
+  width: 100%;
 }
 
-@media (max-width: 380px){
-    .btc-img{
-        width: 375px;
-        height: 250px;
-        padding-bottom: 0;
-    }
+@media (max-width: 600px) {
+  .btc-img {
+    width: 100%;
+    height: 50%;
+  }
 }

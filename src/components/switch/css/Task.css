@@ -1,35 +1,29 @@
 @font-face {
-  font-family: 'ST-SimpleSquare';
-  src: url('../../button/assets/fonts/ST-SimpleSquare.woff') format('woff'),
-      url('../../button/assets/fonts/ST-SimpleSquare_1.woff') format('woff');
+  font-family: "ST-SimpleSquare";
+  src: url("../../button/assets/fonts/ST-SimpleSquare.woff") format("woff"),
+    url("../../button/assets/fonts/ST-SimpleSquare_1.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Jaro';
-  src: url('../../button/assets/fonts/Jaro.woff') format('woff');
+  font-family: "Jaro";
+  src: url("../../button/assets/fonts/Jaro.woff") format("woff");
   font-display: swap;
 }
 
-.page{
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
 
 .task-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
-  margin: 20px auto;
-  padding: 10px;
-  flex-wrap: wrap; 
+  margin: 22px auto;
+  flex-wrap: wrap;
 }
 
 .inscription {
-  font-family: 'ST-SimpleSquare', sans-serif;
+  font-family: "ST-SimpleSquare", sans-serif;
   font-size: 1em;
   color: white;
   margin-top: 1em;
@@ -37,37 +31,37 @@
 }
 
 .imgtg {
-  width: 2em;
-  height: 2em;
-  margin-bottom: 1.75em;
-  margin-right: 1.125em;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 15px;
+  margin-right: 10px;
 }
 
 .imgtw {
-  width: 3.5em;
-  margin-bottom: 1.75em;
-  margin-right: 1.125em;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 15px;
+  margin-right: 10px;
 }
 
 .galxeimg {
-  width: 3em;
-  height: 3em;
-  margin-bottom: 1.75em;
-  margin-right: 1.125em;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 15px;
+  margin-right: 10px;
 }
 
 .imgtonkep {
-  height: 3em;
-  margin-bottom: 1.75em;
-  margin-right: 0.125em;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 15px;
 }
 
 .text {
-  font-family: 'Jaro', sans-serif;
+  font-family: "Jaro", sans-serif;
   color: white;
   text-align: center;
-  margin-bottom: 1em;
-  font-size: 0.9em;
+  font-size: 16px;
 }
 
 .reward-button-container {
@@ -104,15 +98,9 @@
   margin-left: 1.125em;
 }
 
-
-
 @media (max-width: 768px) {
   .inscription h1 {
     font-size: 1.5em;
-  }
-
-  .text {
-    font-size: 0.8em;
   }
 
   .reward-button {
@@ -125,58 +113,75 @@
   .inscription h1 {
     font-size: 1.2em;
   }
-  .reward-button-container{
+  .reward-button-container {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: em;
   }
 
-  .text {
-    font-size: 0.75em;
-  }
-
   .reward-button {
     padding: 0.6em 1em;
     font-size: 0.6em;
   }
-  .imgtg{
-    width: 1.5em;
-    height: 1.5em;
+  .imgtg {
   }
-  .imgtw, .galxeimg, .imgtonkep {
+  .imgtw,
+  .galxeimg,
+  .imgtonkep {
     width: 2.5em;
     height: 2em;
   }
 }
 
-@media (max-width: 380px){
+@media (max-width: 400px) {
+  .task-container{
+    margin: 18px auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .task-container{
+    margin: 10px auto;
+  }
+  .text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .task-container{
+    margin: 6px auto;
+  }
+  .text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
   .inscription h1 {
     font-size: 1em;
   }
-  .container{
-    margin-top: 2em;
-  }
-  .reward-button-container{
+
+  .reward-button-container {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .text {
-    font-size: 0.75em;
-  }
-
   .reward-button {
     padding: 0.6em 1em;
     font-size: 0.6em;
   }
-  .imgtg{
-    width: 1.5em;
-    height: 1.5em;
+  .imgtg {
   }
-  .imgtw, .galxeimg, .imgtonkep {
+  .imgtw,
+  .galxeimg,
+  .imgtonkep {
     width: 2.5em;
     height: 2em;
   }
 }
+
+
+
