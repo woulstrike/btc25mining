@@ -47,7 +47,13 @@ export function StartFarmingSection() {
           />
           <span className="icon-text">@BTC25</span>
         </div>
+<<<<<<< HEAD
         <span className="counter">0,000.000</span>
+=======
+        <span className="counter">
+          0,000.000
+        </span>
+>>>>>>> f8b84714c4508078912bde3194fd223123b1fc38
       </div>
       <button
         className={`centered-button ${isButtonDisabled ? "disabled" : ""}`}

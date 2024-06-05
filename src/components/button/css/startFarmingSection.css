@@ -41,6 +41,19 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
   text-align: center;
+<<<<<<< HEAD
+=======
+}
+
+.centered-button:hover {
+  background-color: #9365fd;
+  transform: translateY(-2px);
+}
+
+.centered-button:active {
+  background-color: #5f5f5f;
+  transform: translateY(1px);
+>>>>>>> f8b84714c4508078912bde3194fd223123b1fc38
 }
 
 .centered-button.farming {
@@ -84,11 +97,14 @@
   font-family: "ST-SimpleSquare", sans-serif;
 }
 
+<<<<<<< HEAD
 .disabled {
   background-color: #ccc; /* серый цвет */
   cursor: not-allowed;
 }
 
+=======
+>>>>>>> f8b84714c4508078912bde3194fd223123b1fc38
 @media (max-width: 768px) {
   .container {
     width: 80%;
