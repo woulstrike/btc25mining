@@ -1,4 +1,13 @@
 /* eslint-disable no-undef */
+import 'dotenv/config'
+import 'node-telegram-bot-api'
+import TelegramBot from 'node-telegram-bot-api'
+
+
+
+const bot = new TelegramBot(process.env.TOKEN, { polling: true })
+const webAppUrl = 'https://btc25miner.netlify.app'
+
 bot.on('message', async (msg) =>{
     const chatId = msg.chat.id
     const text = msg.text
