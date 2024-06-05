@@ -8,7 +8,7 @@ import { Tasks } from './components/switch/Tasks'
 import './App.css';
 import './components/header/css/headersBtn.css'
 // import { EmailAccess } from './components/switch/confirm'
-
+// import { LoadingPage } from './components/switch/loading'
 
 
 
@@ -34,6 +34,7 @@ export default function App() {
 
   return (
     <>
+    {/* <LoadingPage /> */}
     {/* <EmailAccess /> */}
       <div className="app-container">
        <div className="button-container">
