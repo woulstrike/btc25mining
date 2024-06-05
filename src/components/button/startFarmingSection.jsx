@@ -4,15 +4,24 @@ import { useState, useEffect } from "react";
 
 export function StartFarmingSection() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(""); // инициализируем с пустой строкой
+  const [timeLeft, setTimeLeft] = useState("");
+  const [counter, setCounter] = useState(0);
+  const [counterDisplay, setCounterDisplay] = useState("0,000.000");
+
+  useEffect(() => {
+    let counterString = counter.toFixed(3).replace(".", ",");
+    counterString = counterString.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    setCounterDisplay(counterString);
+  }, [counter]);
 
   const handleButtonClick = () => {
     if (!isButtonDisabled) {
       setIsButtonDisabled(true);
       const startTime = new Date().getTime();
-      const endTime = startTime + 8 * 60 * 60 * 1000; // 8 часов
+      const endTime = startTime + 8 * 60 * 60 * 1000;
 
-      const timer = setInterval(() => {
+      let counterInterval = null;
+      let timer = setInterval(() => {
         const currentTime = new Date().getTime();
         const timeRemaining = endTime - currentTime;
         const hours = Math.floor(timeRemaining / (60 * 60 * 1000));
@@ -29,8 +38,13 @@ export function StartFarmingSection() {
 
         if (timeRemaining <= 0) {
           clearInterval(timer);
+          clearInterval(counterInterval);
           setIsButtonDisabled(false);
         }
+      }, 1000);
+
+      counterInterval = setInterval(() => {
+        setCounter((counter) => counter + 200);
       }, 1000);
     }
   };
@@ -47,7 +61,7 @@ export function StartFarmingSection() {
           />
           <span className="icon-text">@BTC25</span>
         </div>
-        <span className="counter">0,000.000</span>
+        <span className="counter">{counterDisplay}</span>
       </div>
       <button
         className={`centered-button ${isButtonDisabled ? "disabled" : ""}`}
