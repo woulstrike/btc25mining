@@ -40,7 +40,7 @@ export function Tasks() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <ChannelSrcButton />
+                <ChannelSrcButton />  {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя (дальше кнопка становится галочкой и некликабельной навсегда)*/}
               </a>
             </div>
           </div>
@@ -59,7 +59,7 @@ export function Tasks() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MainSrcButton />
+                <MainSrcButton /> {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя (дальше кнопка становится галочкой и некликабельной навсегда)*/}
               </a>
             </div>
           </div>
@@ -78,7 +78,7 @@ export function Tasks() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <TwitterSrcButton />
+                <TwitterSrcButton /> {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя (дальше кнопка становится галочкой и некликабельной навсегда)*/}
               </a>
             </div>
           </div>
@@ -97,7 +97,7 @@ export function Tasks() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GalxeSrcButton />
+                <GalxeSrcButton /> {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя (дальше кнопка становится галочкой и некликабельной навсегда)*/}
               </a>
             </div>
           </div>
@@ -116,7 +116,7 @@ export function Tasks() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <TonkeeperSrcButton />
+                <TonkeeperSrcButton /> {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя (дальше кнопка становится галочкой и некликабельной навсегда)*/}
               </a>
             </div>
           </div>
@@ -135,7 +135,7 @@ export function Tasks() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <StonFiSrcButton />
+                <StonFiSrcButton /> {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя (дальше кнопка становится галочкой и некликабельной навсегда)*/}
               </a>
             </div>
           </div>

@@ -4,48 +4,50 @@ import { useState, useEffect } from "react";
 
 export function StartFarmingSection() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-  const [timeLeft, setTimeLeft] = useState("");
-  const [counter, setCounter] = useState(0);
-  const [counterDisplay, setCounterDisplay] = useState("0,000.000");
+  const [timeLeft, setTimeLeft] = useState(null);
+  const [startTime, setStartTime] = useState(localStorage.getItem("startTime"));
 
   useEffect(() => {
-    let counterString = counter.toFixed(3).replace(".", ",");
-    counterString = counterString.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    setCounterDisplay(counterString);
-  }, [counter]);
+    if (startTime) {
+      const currentTime = new Date().getTime();
+      const endTime = parseInt(startTime) + 8 * 60 * 60 * 1000;
+      const timeRemaining = endTime - currentTime;
+      if (timeRemaining > 0) {
+        setIsButtonDisabled(true);
+        const timer = setInterval(() => {
+          const currentTime = new Date().getTime();
+          const timeRemaining = endTime - currentTime;
+          const hours = Math.floor(timeRemaining / (60 * 60 * 1000));
+          const minutes = Math.floor(
+            (timeRemaining % (60 * 60 * 1000)) / (60 * 1000)
+          );
+          const seconds = Math.floor((timeRemaining % (60 * 1000)) / 1000);
+
+          setTimeLeft(
+            `${hours.toString().padStart(2, "0")}:${minutes
+              .toString()
+              .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
+          );
+
+          if (timeRemaining <= 0) {
+            clearInterval(timer);
+            setIsButtonDisabled(false);
+            localStorage.removeItem("startTime");
+          }
+        }, 1000);
+      } else {
+        setIsButtonDisabled(false);
+        localStorage.removeItem("startTime");
+      }
+    }
+  }, [startTime]);
 
   const handleButtonClick = () => {
     if (!isButtonDisabled) {
+      const currentTime = new Date().getTime();
+      setStartTime(currentTime.toString());
+      localStorage.setItem("startTime", currentTime.toString());
       setIsButtonDisabled(true);
-      const startTime = new Date().getTime();
-      const endTime = startTime + 8 * 60 * 60 * 1000;
-
-      let counterInterval = null;
-      let timer = setInterval(() => {
-        const currentTime = new Date().getTime();
-        const timeRemaining = endTime - currentTime;
-        const hours = Math.floor(timeRemaining / (60 * 60 * 1000));
-        const minutes = Math.floor(
-          (timeRemaining % (60 * 60 * 1000)) / (60 * 1000)
-        );
-        const seconds = Math.floor((timeRemaining % (60 * 1000)) / 1000);
-
-        setTimeLeft(
-          `${hours.toString().padStart(2, "0")}:${minutes
-            .toString()
-            .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
-        );
-
-        if (timeRemaining <= 0) {
-          clearInterval(timer);
-          clearInterval(counterInterval);
-          setIsButtonDisabled(false);
-        }
-      }, 1000);
-
-      counterInterval = setInterval(() => {
-        setCounter((counter) => counter + 200);
-      }, 1000);
     }
   };
 
@@ -61,14 +63,14 @@ export function StartFarmingSection() {
           />
           <span className="icon-text">@BTC25</span>
         </div>
-        <span className="counter">{counterDisplay}</span>
+        <span className="counter">0,000.000</span> {/* ЗДЕСЬ НУЖНО сделать правильный счетчик, чтобы каждую секунду прибавляло +2(0,000.002) (чтобы в итоге получить 0,057.000)*/}
       </div>
       <button
         className={`centered-button ${isButtonDisabled ? "disabled" : ""}`}
         onClick={handleButtonClick}
         disabled={isButtonDisabled}
       >
-        {isButtonDisabled ? `Wait ${timeLeft}` : "Start Farm"}
+        {isButtonDisabled && timeLeft ? `Wait ${timeLeft}` : "Start Farm"}
       </button>
     </div>
   );
