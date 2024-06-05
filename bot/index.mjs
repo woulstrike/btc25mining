@@ -8,11 +8,15 @@ import TelegramBot from 'node-telegram-bot-api'
 const bot = new TelegramBot(process.env.TOKEN, { polling: true })
 const webAppUrl = 'https://btc25miner.netlify.app'
 
+
 bot.on('message', async (msg) =>{
     const chatId = msg.chat.id
     const text = msg.text
 
     if(text === '/start'){
+        const chat = await bot.getChat(chatId)
+        const userId = chat.from.id 
+
         await bot.sendMessage(chatId, 'Начни майнить BTC25 в этой игре!', {
             reply_markup: {
                 inline_keyboard: [

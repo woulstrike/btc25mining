@@ -1,211 +1,187 @@
 @font-face {
-    font-family: 'ST-SimpleSquare';
-    src: url('../assets/fonts/ST-SimpleSquare_1.woff') format('woff'),
-        url('../assets/fonts/ST-SimpleSquare.woff') format('woff');
-    font-display: swap;
+  font-family: "ST-SimpleSquare";
+  src: url("../assets/fonts/ST-SimpleSquare_1.woff") format("woff"),
+    url("../assets/fonts/ST-SimpleSquare.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
-    font-family: 'Jaro';
-    src: url('../assets/fonts/Jaro.woff') format('woff');
-    font-display: swap;
+  font-family: "Jaro";
+  src: url("../assets/fonts/Jaro.woff") format("woff");
+  font-display: swap;
 }
 
 .container {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 400px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 80%;
+  max-width: 400px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  height: 85%;
+  justify-content: center;
 }
 
 .content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .centered-button {
-    background-color: #50b9ff;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    padding: 1.5em 0;
-    font-size: 1.125em;
-    width: 100%;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-align: center;
-}
-
-.centered-button:hover {
-    background-color: #9365fd;
-    transform: translateY(-2px);
-}
-
-.centered-button:active {
-    background-color: #5f5f5f;
-    transform: translateY(1px);
+  background-color: #50b9ff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 1.5em 0;
+  font-size: 1.125em;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
 }
 
 .centered-button.farming {
-    background-color: gray;
-    cursor: not-allowed;
+  background-color: gray;
+  cursor: not-allowed;
 }
 
 .counter-display {
-    display: flex;
-    align-items: center;
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-right: 1.875em;
+  display: flex;
+  align-items: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-right: 1.875em;
 }
 
 .counter {
-    font-family: 'ST-SimpleSquare', 'Jaro', 'Arial Black', sans-serif;
-    color: rgb(255, 255, 255);
-    font-size: 3.1875em;
-    text-align: center;
-    padding-top: 5em;
-    padding-right: 3.5em;
-    margin-left: 1.5em;
+  font-family: "ST-SimpleSquare", "Jaro", "Arial Black", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 3.1875em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
 }
 
 .icon-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 13em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .icon-counter {
-    width: 3.125em;
-    height: 3.125em;
+  width: 3.125em;
+  height: 3.125em;
 }
 
 .icon-text {
-    font-size: 0.75em;
-    color: rgb(255, 255, 255);
-    margin-top: 0.375em;
-    font-family: 'ST-SimpleSquare', sans-serif;
+  font-size: 0.75em;
+  color: rgb(255, 255, 255);
+  margin-top: 0.375em;
+  font-family: "ST-SimpleSquare", sans-serif;
 }
 
+.disabled {
+  background-color: #ccc; /* серый цвет */
+  cursor: not-allowed;
+}
 
 @media (max-width: 768px) {
-    .container {
-        width: 90%;
-        max-width: 350px;
-    }
+  .container {
+    width: 80%;
+    max-width: 350px;
+    height: 75%;
+  }
 
-    .centered-button {
-        padding: 1.25em 0;
-        font-size: 1em;
-    }
+  .centered-button {
+    padding: 1.25em 0;
+    font-size: 1em;
+    margin-top: 20px;
+  }
 
-    .counter-display {
-        font-size: 2em;
-        margin-right: 1.25em;
-    }
+  .counter-display {
+    font-size: 2em;
+    margin-right: 1.25em;
+  }
 
-    .counter {
-        font-size: 1.875em;
-        padding-top: 4em;
-        padding-right: 3em;
-    }
+  .counter {
+    font-size: 1.875em;
+  }
 
-    .icon {
-        width: 2.5em;
-        height: 2.5em;
-    }
+  .icon {
+    width: 2.5em;
+    height: 2.5em;
+  }
 
-    .icon-text {
-        font-size: 0.6875em;
-    }
+  .icon-text {
+    font-size: 0.6875em;
+  }
 }
 
 @media (max-width: 480px) {
-    .container {
-        width: 100%;
-        max-width: 300px;
-        margin-top: -9.75em;
-    }
+  .container {
+    width: 100%;
+    max-width: 300px;
+    height: 88%;
+  }
 
-    .centered-button {
-        margin-bottom: 2em;
-        padding: 1em 1em ;
-        font-size: 1em;
-        margin-top: 2em;
+  .centered-button {
+    padding: 1em 1em;
+    font-size: 1em;
+  }
 
-    }
+  .counter-display {
+    font-size: 2.5em;
+    margin-right: 1em;
+  }
 
-    .counter-display {
-        font-size: 2.5em;
-        margin-right: 1em;
-    }
+  .counter {
+    font-size: 1.725em;
+  }
 
-    .counter {
-        font-size: 1.725em;
-        padding-top: 9em;
-        padding-right: 2.5em;
-    }
+  .icon-counter {
+    width: 2em;
+    height: 2em;
+    margin-bottom: 0;
+  }
 
-    .icon-counter {
-        width: 2em;
-        height: 2em;
-        margin-bottom: 0;
-        padding-top: 5em;
-    }
-
-    .icon-text {
-        font-size: 0.625em;
-    }
+  .icon-text {
+    font-size: 0.625em;
+  }
 }
-
 
 @media (max-width: 380px) {
-    .container {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    .icon-container{
-        padding-top: 8em;
-    }
+  .container {
+    width: 100%;
+    height: 60%;
+  }
+  .centered-button {
+    padding: 1em 1em;
+    font-size: 1em;
+  }
+  .content-wrapper {
+    padding: 0;
+  }
+  .counter-display {
+    font-size: 1.5em;
+    margin-right: 1em;
+  }
 
-    .centered-button {
-        margin-bottom: 1em;
-        padding: 1em 1em ;
-        font-size: 1em;
-        margin-top: 1em;
+  .counter {
+    font-size: 1.725em;
+  }
 
-    }
-    .content-wrapper{
-        margin-bottom: 2rem;
-        padding: 0;
-    }
-    .counter-display {
-        font-size: 1.5em;
-        margin-right: 1em;
-    }
+  .icon-counter {
+    width: 1m;
+    height: 1em;
+    padding-top: 1rem;
+  }
 
-    .counter {
-        font-size: 1.725em;
-        padding-top: 5.25em;
-        padding-right: 2.75em;
-    }
-
-    .icon-counter {
-        width: 1m;
-        height: 1em;
-        padding-top: 1rem;
-    }
-
-    .icon-text {
-        font-size: 0.625em;
-    }
+  .icon-text {
+    font-size: 0.625em;
+  }
 }
+

@@ -1,53 +1,58 @@
 @font-face {
-    font-family: 'ST-SimpleSquare';
-    src: url('../../button/assets/fonts/ST-SimpleSquare.woff') format('woff'),
-        url('../../button/assets/fonts/ST-SimpleSquare_1.woff') format('woff');
-    font-display: swap;
-  }
+  font-family: "ST-SimpleSquare";
+  src: url("../../button/assets/fonts/ST-SimpleSquare.woff") format("woff"),
+    url("../../button/assets/fonts/ST-SimpleSquare_1.woff") format("woff");
+  font-display: swap;
+}
 
 .invite-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2em;
-    border-radius: 10px;
-    padding-top: 8rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-  
-  .invite-title {
-    margin-bottom: 6em;
-    font-size: 1.5em;
-    color: #00FFE0;
-    font-family: 'ST-SimpleSquare', sans-serif;
-    text-align: center;
+
+.invite-title {
+  margin-bottom: 6em;
+  font-size: 1.5em;
+  color: #00ffe0;
+  font-family: "ST-SimpleSquare", sans-serif;
+  text-align: center;
 }
-  
-  .invite-button {
-    padding: 0.9em 6em;
-    font-size: 1em;
-    color: #000000;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'ST-SimpleSquare', sans-serif;
+
+.invite-button {
+  padding: 0.9em 6em;
+  font-size: 1em;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "ST-SimpleSquare", sans-serif;
 }
-  
-  .invite-button:hover {
-    background-color: #ffffff;
+
+.invite-button:hover {
+  background-color: #ffffff;
 }
-  
-  .invite-button:active {
-    background-color: #ffffff;
+
+.invite-button:active {
+  background-color: #ffffff;
 }
-  
-.invite-title-two{
+
+.invite-title-two {
   margin-bottom: 12rem;
   font-size: 1.2em;
   color: #ffffff;
-  font-family: 'ST-SimpleSquare', sans-serif;
+  font-family: "ST-SimpleSquare", sans-serif;
   text-align: center;
+}
+
+@media (max-width: 380px) {
+  .invite-title {
+    margin-bottom: 0em;
+  }
 }
