@@ -125,7 +125,7 @@
   .container {
     width: 100%;
     max-width: 300px;
-    height: 90%;
+    height: 88%;
   }
 
   .centered-button {
@@ -156,7 +156,7 @@
 @media (max-width: 380px) {
   .container {
     width: 100%;
-    height: 70%;
+    height: 60%;
   }
   .centered-button {
     padding: 1em 1em;

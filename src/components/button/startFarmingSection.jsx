@@ -61,7 +61,7 @@ export function StartFarmingSection() {
           />
           <span className="icon-text">@BTC25</span>
         </div>
-        <span className="counter">0,000.000</span>
+        <span className="counter">0,000.000</span> {/* ЗДЕСЬ НУЖНО сделать правильный счетчик, чтобы каждую секунду прибавляло +2(0,000.002) (чтобы в итоге получить 0,057.000)*/}
       </div>
       <button
         className={`centered-button ${isButtonDisabled? "disabled" : ""}`}
