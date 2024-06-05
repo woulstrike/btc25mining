@@ -18,7 +18,7 @@
   justify-content: center;
   width: 100%;
   max-width: 800px;
-  margin: 18px auto;
+  margin: 17px auto;
   flex-wrap: wrap;
 }
 
@@ -136,7 +136,7 @@
 
 @media (max-width: 400px) {
   .task-container{
-    margin: 18px auto;
+    margin: 16px auto;
   }
 }
 
