@@ -70,7 +70,7 @@ export function StartFarmingSection() {
         onClick={handleButtonClick}
         disabled={isButtonDisabled}
       >
-        {isButtonDisabled && timeLeft ? `Wait ${timeLeft}` : "Start Farm"}
+        {isButtonDisabled && timeLeft ? `Wait ${timeLeft}` : "Start Farm"} 
       </button>
     </div>
   );
