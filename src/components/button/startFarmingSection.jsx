@@ -1,7 +1,40 @@
-import './css/startFarmingSection.css';
-import coinImg from '../assets/coin.png';
+import "./css/startFarmingSection.css";
+import coinImg from "../assets/coin.png";
+import { useState, useEffect } from "react";
 
 export function StartFarmingSection() {
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(""); // инициализируем с пустой строкой
+
+  const handleButtonClick = () => {
+    if (!isButtonDisabled) {
+      setIsButtonDisabled(true);
+      const startTime = new Date().getTime();
+      const endTime = startTime + 8 * 60 * 60 * 1000; // 8 часов
+
+      const timer = setInterval(() => {
+        const currentTime = new Date().getTime();
+        const timeRemaining = endTime - currentTime;
+        const hours = Math.floor(timeRemaining / (60 * 60 * 1000));
+        const minutes = Math.floor(
+          (timeRemaining % (60 * 60 * 1000)) / (60 * 1000)
+        );
+        const seconds = Math.floor((timeRemaining % (60 * 1000)) / 1000);
+
+        setTimeLeft(
+          `${hours.toString().padStart(2, "0")}:${minutes
+            .toString()
+            .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
+        );
+
+        if (timeRemaining <= 0) {
+          clearInterval(timer);
+          setIsButtonDisabled(false);
+        }
+      }, 1000);
+    }
+  };
+
   return (
     <div className="container">
       <div className="content-wrapper">

@@ -6,7 +6,6 @@
 }
 
 .invite-container {
-<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,15 +13,6 @@
   padding: 2em;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-=======
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2em;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
->>>>>>> a2e6acc15f083f4a4fd04e9fd749d729db3ed5c1
 }
 
 .invite-title {
