@@ -6,6 +6,30 @@ export function StartFarmingSection() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [timeLeft, setTimeLeft] = useState(null);
   const [startTime, setStartTime] = useState(localStorage.getItem("startTime"));
+  const [counter, setCounter] = useState(
+    localStorage.getItem("counter")
+      ? parseFloat(localStorage.getItem("counter"))
+      : 0
+  );
+  const [counterDisplay, setCounterDisplay] = useState(
+    localStorage.getItem("counterDisplay")
+      ? localStorage.getItem("counterDisplay")
+      : "0,000.000"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("counter", counter);
+  }, [counter]);
+
+  useEffect(() => {
+    localStorage.setItem("counterDisplay", counterDisplay);
+  }, [counterDisplay]);
+
+  useEffect(() => {
+    let counterString = counter.toFixed(3).replace(".", ",");
+    counterString = counterString.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    setCounterDisplay(counterString);
+  }, [counter]);
 
   useEffect(() => {
     if (startTime) {
@@ -18,13 +42,15 @@ export function StartFarmingSection() {
           const currentTime = new Date().getTime();
           const timeRemaining = endTime - currentTime;
           const hours = Math.floor(timeRemaining / (60 * 60 * 1000));
-          const minutes = Math.floor((timeRemaining % (60 * 60 * 1000)) / (60 * 1000));
+          const minutes = Math.floor(
+            (timeRemaining % (60 * 60 * 1000)) / (60 * 1000)
+          );
           const seconds = Math.floor((timeRemaining % (60 * 1000)) / 1000);
 
           setTimeLeft(
             `${hours.toString().padStart(2, "0")}:${minutes
-             .toString()
-             .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
+              .toString()
+              .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
           );
 
           if (timeRemaining <= 0) {
@@ -37,6 +63,24 @@ export function StartFarmingSection() {
         setIsButtonDisabled(false);
         localStorage.removeItem("startTime");
       }
+    }
+  }, [startTime]);
+
+  useEffect(() => {
+    // Получаем значение startTime из localStorage
+    const storedStartTime = localStorage.getItem("startTime");
+    if (storedStartTime) {
+      setStartTime(storedStartTime);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Если startTime установлен, то запускаем интервал для обновления счетчика
+    if (startTime) {
+      const counterInterval = setInterval(() => {
+        setCounter((counter) => counter + 0.002);
+      }, 1000);
+      return () => clearInterval(counterInterval); // Очищаем интервал при размонтировании компонента
     }
   }, [startTime]);
 
@@ -61,10 +105,10 @@ export function StartFarmingSection() {
           />
           <span className="icon-text">@BTC25</span>
         </div>
-        <span className="counter">0,000.000</span> {/* ЗДЕСЬ НУЖНО сделать правильный счетчик, чтобы каждую секунду прибавляло +2(0,000.002) (чтобы в итоге получить 0,057.000)*/}
+        <span className="counter">{counterDisplay}</span>
       </div>
       <button
-        className={`centered-button ${isButtonDisabled? "disabled" : ""}`}
+        className={`centered-button ${isButtonDisabled ? "disabled" : ""}`}
         onClick={handleButtonClick}
         disabled={isButtonDisabled}
       >

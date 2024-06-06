@@ -14,19 +14,12 @@ bot.on("message", async (msg) => {
     const chat = await bot.getChat(chatId);
     const userId = chat.from.id;
 
-    // Отправляем запрос к серверу
-    const response = await axios.post(
-      "https://your-nestjs-app.com/users/farm",
-      {
-        userId: userId,
-      }
-    );
-
-    // Обрабатываем ответ от сервера
-    if (response.data.success) {
-      await bot.sendMessage(chatId, "Вы начали майнить BTC25!");
-    } else {
-      await bot.sendMessage(chatId, "Ошибка при начале майнинга BTC25");
-    }
+    await bot.sendMessage(chatId, "Начни майнить BTC25 в этой игре!", {
+      reply_markup: {
+        inline_keyboard: [
+          [{ text: "Начать майнить", web_app: { url: webAppUrl } }],
+        ],
+      },
+    });
   }
 });
