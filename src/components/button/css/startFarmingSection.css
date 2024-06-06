@@ -66,23 +66,6 @@
   padding-right: 30px;
 }
 
-.icon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.icon-counter {
-  width: 3.125em;
-  height: 3.125em;
-}
-
-.icon-text {
-  font-size: 0.75em;
-  color: rgb(255, 255, 255);
-  margin-top: 0.375em;
-  font-family: "ST-SimpleSquare", sans-serif;
-}
 
 .disabled {
   background-color: #ccc; /* серый цвет */
@@ -109,15 +92,6 @@
 
   .counter {
     font-size: 1.875em;
-  }
-
-  .icon {
-    width: 2.5em;
-    height: 2.5em;
-  }
-
-  .icon-text {
-    font-size: 0.6875em;
   }
 }
 

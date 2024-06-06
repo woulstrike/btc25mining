@@ -37,22 +37,27 @@
 }
 
 .imgtw {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   margin-bottom: 15px;
   margin-right: 10px;
 }
 
-.galxeimg {
-  width: 25px;
-  height: 25px;
+.imggalxe {
+  width: 35px;
+  height: 35px;
   margin-bottom: 15px;
   margin-right: 10px;
 }
 
-.imgtonkep {
-  width: 25px;
-  height: 25px;
+.imgtonkeeper {
+  width: 55px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+.imgstonfi{
+  width: 35px;
+  height: 35px;
   margin-bottom: 15px;
 }
 
@@ -130,14 +135,8 @@
     padding: 0.6em 1em;
     font-size: 0.6em;
   }
-  .imgtg {
-  }
-  .imgtw,
-  .galxeimg,
-  .imgtonkep {
-    width: 2.5em;
-    height: 2em;
-  }
+
+ 
 }
 
 @media (max-width: 400px) {
@@ -179,11 +178,10 @@
     padding: 0.6em 1em;
     font-size: 0.6em;
   }
-  .imgtg {
-  }
+  .imgstonfi,
   .imgtw,
-  .galxeimg,
-  .imgtonkep {
+  .imggalxe,
+  .imgtonkeeper {
     width: 2.5em;
     height: 2em;
   }

@@ -2,6 +2,14 @@
   width: 100%;
 }
 
+.wrapper-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  
+}
+
 @media (max-width: 600px) {
   .btc-img {
     width: 100%;

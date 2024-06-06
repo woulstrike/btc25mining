@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "ST-SimpleSquare";
+  src: url("../assets/fonts/ST-SimpleSquare_1.woff") format("woff"),
+    url("../assets/fonts/ST-SimpleSquare.woff") format("woff");
+  font-display: swap;
+}
+
+.counterHome {
+  font-size: 35px;
+  font-family: "ST-SimpleSquare", "Jaro", "Arial Black", sans-serif;
+}
+
+.btnfarm {
+  background-color: #50b9ff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 1.5em 0;
+  font-size: 1.125em;
+  width: 350px;
+  height: 70px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+}
+
+.wrapper-farm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper-counter{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+}
+
+
+.icon-counter {
+    width: 3.125em;
+    height: 3.125em;
+  }
+  
+.icon-text {
+    font-size: 0.75em;
+    color: rgb(255, 255, 255);
+    margin-top: 0.375em;
+    font-family: "ST-SimpleSquare", sans-serif;
+}
+
+
+@media (max-width: 768px){
+    .icon {
+        width: 2.5em;
+        height: 2.5em;
+      }
+    
+      .icon-text {
+        font-size: 0.6875em;
+      }
+}
+
+
+@media (max-width: 480px){
+    .icon-counter {
+        width: 2em;
+        height: 2em;
+        margin-bottom: 0;
+      }
+    
+      .icon-text {
+        font-size: 0.625em;
+      }
+}
+
+@media (max-width: 380px){
+    .icon-counter {
+        width: 1m;
+        height: 1em;
+        padding-top: 1rem;
+      }
+    
+      .icon-text {
+        font-size: 0.625em;
+      }
+}
+
