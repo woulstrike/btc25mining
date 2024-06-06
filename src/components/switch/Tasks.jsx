@@ -24,7 +24,7 @@ const Tasks = () => {
   const [tonkeeperReward, setTonkeeperReward] = useState(false);
   const [stonfiReward, setStonfiReward] = useState(false);
 
-  const userId = windows.Telegram.WebApp.initDataUnsafe.user.id;
+  const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
   const [userTasksData, setUserTasksData] = useState({});
 
   useEffect(() => {

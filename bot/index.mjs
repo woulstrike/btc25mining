@@ -12,10 +12,10 @@ bot.on("message", async (msg) => {
 
   if (text === "/start") {
     const chat = await bot.getChat(chatId);
-    const userId = chat.from.id;
+    const userId = msg.from.id;
 
     try {
-      await axios.post("http://localhost:3000/user", { userId });
+      await axios.post("http://localhost:3000/users", { userId });
     } catch (error) {
       console.error("Ошибка при отправке запроса на сервер:", error);
       await bot.sendMessage(chatId, "Ошибка при отправке запроса на сервер. Пожалуйста, повторите попытку.");
