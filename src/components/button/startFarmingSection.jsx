@@ -18,15 +18,13 @@ export function StartFarmingSection() {
           const currentTime = new Date().getTime();
           const timeRemaining = endTime - currentTime;
           const hours = Math.floor(timeRemaining / (60 * 60 * 1000));
-          const minutes = Math.floor(
-            (timeRemaining % (60 * 60 * 1000)) / (60 * 1000)
-          );
+          const minutes = Math.floor((timeRemaining % (60 * 60 * 1000)) / (60 * 1000));
           const seconds = Math.floor((timeRemaining % (60 * 1000)) / 1000);
 
           setTimeLeft(
             `${hours.toString().padStart(2, "0")}:${minutes
-              .toString()
-              .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
+             .toString()
+             .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
           );
 
           if (timeRemaining <= 0) {
@@ -66,11 +64,11 @@ export function StartFarmingSection() {
         <span className="counter">0,000.000</span> {/* ЗДЕСЬ НУЖНО сделать правильный счетчик, чтобы каждую секунду прибавляло +2(0,000.002) (чтобы в итоге получить 0,057.000)*/}
       </div>
       <button
-        className={`centered-button ${isButtonDisabled ? "disabled" : ""}`}
+        className={`centered-button ${isButtonDisabled? "disabled" : ""}`}
         onClick={handleButtonClick}
         disabled={isButtonDisabled}
       >
-        {isButtonDisabled && timeLeft ? `Wait ${timeLeft}` : "Start Farm"} 
+        {isButtonDisabled && timeLeft ? `Wait ${timeLeft}` : "Start Farm"}
       </button>
     </div>
   );

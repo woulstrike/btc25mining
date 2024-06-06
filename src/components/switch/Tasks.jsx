@@ -90,8 +90,7 @@ export function Tasks() {
                   rel="noopener noreferrer"
                   onClick={handleTelegramClick}
                 >
-                  <ChannelSrcButton />{" "}
-                  {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя и отмечать на сервере, что это задание выполнено, чтобы оно было кликабельным только один раз (дальше кнопка становится галочкой и некликабельной навсегда)*/}
+                  <ChannelSrcButton />
                 </a>
               )}
             </div>
@@ -115,8 +114,7 @@ export function Tasks() {
                   rel="noopener noreferrer"
                   onClick={handleMainClick}
                 >
-                  <MainSrcButton />{" "}
-                  {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя и отмечать на сервере, что это задание выполнено, чтобы оно было кликабельным только один раз (дальше кнопка становится галочкой и некликабельной навсегда)*/}
+                  <MainSrcButton />
                 </a>
               )}
             </div>
@@ -132,6 +130,7 @@ export function Tasks() {
             </span>
             <div className="reward-button-container">
               {twitterReward ? (
+                
                 <img src={checkedImg} alt="checked" className="checked" />
               ) : (
                 <a
@@ -140,8 +139,7 @@ export function Tasks() {
                   rel="noopener noreferrer"
                   onClick={handleTwitterClick}
                 >
-                  <TwitterSrcButton />{" "}
-                  {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя и отмечать на сервере, что это задание выполнено, чтобы оно было кликабельным только один раз (дальше кнопка становится галочкой и некликабельной навсегда)*/}
+                  <TwitterSrcButton />
                 </a>
               )}
             </div>
@@ -165,8 +163,7 @@ export function Tasks() {
                   rel="noopener noreferrer"
                   onClick={handleGalxeClick}
                 >
-                  <GalxeSrcButton />{" "}
-                  {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя и отмечать на сервере, что это задание выполнено, чтобы оно было кликабельным только один раз (дальше кнопка становится галочкой и некликабельной навсегда)*/}
+                  <GalxeSrcButton />
                 </a>
               )}
             </div>
@@ -190,8 +187,7 @@ export function Tasks() {
                   rel="noopener noreferrer"
                   onClick={handleTonkeeperClick}
                 >
-                  <TonkeeperSrcButton />{" "}
-                  {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя и отмечать на сервере, что это задание выполнено, чтобы оно было кликабельным только один раз (дальше кнопка становится галочкой и некликабельной навсегда)*/}
+                  <TonkeeperSrcButton />
                 </a>
               )}
             </div>
@@ -215,8 +211,7 @@ export function Tasks() {
                   rel="noopener noreferrer"
                   onClick={handleStonfiClick}
                 >
-                  <StonFiSrcButton />{" "}
-                  {/* ЗДЕСЬ НУЖНО сделать при нажатии +1к (0,001.000) только один раз для пользователя и отмечать на сервере, что это задание выполнено, чтобы оно было кликабельным только один раз (дальше кнопка становится галочкой и некликабельной навсегда)*/}
+                  <StonFiSrcButton />
                 </a>
               )}
             </div>
