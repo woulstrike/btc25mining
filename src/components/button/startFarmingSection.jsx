@@ -103,7 +103,7 @@ export function StartFarmingSection() {
             className="icon"
             style={{ width: "75px", height: "75px" }}
           />
-          <span className="icon-text">@Promo</span>
+          <span className="icon-text">Promo</span>
         </div>
         <span className="counter">{counterDisplay}</span>
       </div>
