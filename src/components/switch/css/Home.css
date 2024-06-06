@@ -4,17 +4,15 @@
 
 @media (max-width: 600px) {
   .btc-img {
-    width: 100%;
-    height: 50%;
+    padding: 37px;
+    width: 80%;
+    height: 60%;
   }
 }
-<<<<<<< HEAD
 
 @media (max-width: 380px) {
   .btc-img {
-    width: 100%;
-    height: 35%;
+    width: 80%;
+    height: 40%;
   }
 }
-=======
->>>>>>> a2e6acc15f083f4a4fd04e9fd749d729db3ed5c1

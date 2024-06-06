@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+
 import "dotenv/config";
 import "node-telegram-bot-api";
 import TelegramBot from "node-telegram-bot-api";
@@ -11,8 +11,8 @@ bot.on("message", async (msg) => {
   const text = msg.text;
 
   if (text === "/start") {
-    const chat = await bot.getChat(chatId);
-    const userId = chat.from.id;
+    // const chat = await bot.getChat(chatId);
+    // const userId = chat.from.id;
 
     await bot.sendMessage(chatId, "Начни майнить BTC25 в этой игре!", {
       reply_markup: {
